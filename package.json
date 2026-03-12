@@ -1,7 +1,7 @@
 {
   "author": "To Nam Son",
   "name": "scan-erc20-token",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scan ERC20 Transfer logs for a wallet with optional RPC proxy and block range filters.",
   "type": "module",
   "main": "./src/index.js",
