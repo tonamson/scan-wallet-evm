@@ -1,6 +1,6 @@
-# scan-erc20-token
+# Scan wallet transaction token ERC20
 
-Small ERC20 transfer scanner for EVM RPC endpoints.
+Scan all incoming and outgoing ERC20 token transfers of an EVM wallet
 
 Supports:
 - custom `rpcUrl`
