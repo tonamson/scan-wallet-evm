@@ -167,8 +167,9 @@ type Erc20Transfer = {
 
 ## Notes
 
-If `toBlock` is omitted, the latest block is used.
-If `fromBlock` is omitted, it scans only `toBlock`.
+If both `fromBlock` and `toBlock` are omitted, it scans from `latestBlock - 100` to `latestBlock`.
+If only `toBlock` is omitted, the latest block is used.
+If only `fromBlock` is omitted, it scans only `toBlock`.
 If `tokenAddress` is provided, the RPC query filters by that contract address directly.
 If `direction` is omitted, it scans both incoming and outgoing transfers.
 Each returned transfer includes `blockTimestamp`.

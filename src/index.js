@@ -155,7 +155,9 @@ function mapTransferLog(log, blockTimestamp) {
  * @param {string | null} [options.tokenAddress] Optional ERC20 token contract filter.
  * @param {"in" | "out" | "both"} [options.direction] Scan incoming, outgoing, or both.
  * @param {number | bigint} [options.fromBlock] Optional start block.
+ * If both `fromBlock` and `toBlock` are omitted, the scan starts at `latestBlock - 100`.
  * @param {number | bigint} [options.toBlock] Optional end block.
+ * If both `fromBlock` and `toBlock` are omitted, the scan ends at `latestBlock`.
  * @param {string | {url: string, username?: string, password?: string} | null} [options.proxy]
  * Optional proxy configuration or proxy URL string.
  * @param {string | {url: string, username?: string, password?: string} | null} [options.proxyUrl]
@@ -189,12 +191,12 @@ export async function scanErc20Transfers(options) {
   }
 
   const provider = options.provider ?? createRpcProvider(options);
-  const latestBlock = toBlock == null || fromBlock == null
-    ? await provider.getBlockNumber()
-    : null;
+  const needsLatestBlock = toBlock == null || fromBlock == null;
+  const latestBlock = needsLatestBlock ? await provider.getBlockNumber() : null;
 
   const resolvedToBlock = toBlock ?? latestBlock;
-  const resolvedFromBlock = fromBlock ?? resolvedToBlock;
+  const resolvedFromBlock =
+    fromBlock ?? (toBlock == null ? Math.max(resolvedToBlock - 100, 0) : resolvedToBlock);
   const sharedFilter = {
     ...(tokenAddress ? { address: tokenAddress } : {}),
     fromBlock: resolvedFromBlock,

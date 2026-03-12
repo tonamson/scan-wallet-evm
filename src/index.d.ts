@@ -84,14 +84,20 @@ export interface ScanErc20TransfersOptions extends RpcProviderOptions {
   /**
    * Optional start block.
    *
-   * If omitted, the scan uses `toBlock`.
+   * If both `fromBlock` and `toBlock` are omitted,
+   * the scan starts at `latestBlock - 100`.
+   *
+   * If only `fromBlock` is omitted, the scan uses `toBlock`.
    */
   fromBlock?: number | bigint;
 
   /**
    * Optional end block.
    *
-   * If omitted, the latest block number is used.
+   * If both `fromBlock` and `toBlock` are omitted,
+   * the scan ends at the latest block number.
+   *
+   * If only `toBlock` is omitted, the latest block number is used.
    */
   toBlock?: number | bigint;
 
@@ -200,8 +206,10 @@ export declare function createRpcProvider(
  * @param options.direction Scan incoming, outgoing, or both directions.
  * @param options.proxy Optional proxy configuration or proxy URL string.
  * @param options.proxyUrl Alias of `options.proxy`.
- * @param options.fromBlock Optional start block.
- * @param options.toBlock Optional end block.
+ * @param options.fromBlock Optional start block. Defaults to `latestBlock - 100`
+ * when both `fromBlock` and `toBlock` are omitted.
+ * @param options.toBlock Optional end block. Defaults to `latestBlock`
+ * when both `fromBlock` and `toBlock` are omitted.
  * @param options.timeoutMs Optional HTTP timeout in milliseconds.
  * @param options.provider Optional custom provider implementation.
  */

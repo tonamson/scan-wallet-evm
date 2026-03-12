@@ -196,13 +196,40 @@ test("scanErc20Transfers applies tokenAddress filter and resolves latest block w
   assert.equal(calls.getBlock.length, 1);
   assert.deepEqual(calls.getLogs[0], {
     address: token,
-    fromBlock: 888888,
+    fromBlock: 888788,
     toBlock: 888888,
     topics: [ethers.id("Transfer(address,address,uint256)"), null, addressToTopic(wallet)],
   });
   assert.equal(transfers.length, 2);
   assert.equal(transfers[0].blockTimestamp, 1773053000);
   assert.equal(transfers[1].blockTimestamp, 1773053000);
+});
+
+test("scanErc20Transfers defaults to the latest 100 blocks when fromBlock and toBlock are omitted", async () => {
+  const wallet = "0xd00000000000000000000000000000000000000d";
+  const token = "0xe00000000000000000000000000000000000000e";
+
+  const { calls, provider } = createMockProvider({
+    logs: [],
+    blockTimestamps: {},
+    latestBlock: 5000,
+  });
+
+  await scanErc20Transfers({
+    provider,
+    rpcUrl: "https://rpc.example.test",
+    wallet,
+    tokenAddress: token,
+    direction: "in",
+  });
+
+  assert.equal(calls.getBlockNumber, 1);
+  assert.deepEqual(calls.getLogs[0], {
+    address: ethers.getAddress(token),
+    fromBlock: 4900,
+    toBlock: 5000,
+    topics: [ethers.id("Transfer(address,address,uint256)"), null, addressToTopic(wallet)],
+  });
 });
 
 test('scanErc20Transfers filters outgoing transfers when direction is "out"', async () => {
