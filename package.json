@@ -1,0 +1,31 @@
+{
+  "author": "To Nam Son",
+  "name": "scan-erc20-token",
+  "version": "0.1",
+  "description": "Scan ERC20 Transfer logs for a wallet with optional RPC proxy and block range filters.",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "^6.16.0",
+    "https-proxy-agent": "^8.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
