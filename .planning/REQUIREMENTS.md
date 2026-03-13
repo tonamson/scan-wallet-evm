@@ -19,8 +19,8 @@
 
 ### Documentation & Verification
 
-- [ ] **DOC-01**: Developer can follow README examples to scan native-token transfers and understand the feature's scope limits
-- [ ] **DOC-02**: Automated tests cover native incoming, outgoing, and default-range scanning with mocked provider data
+- [x] **DOC-01**: Developer can follow README examples to scan native-token transfers and understand the feature's scope limits
+- [x] **DOC-02**: Automated tests cover native incoming, outgoing, and default-range scanning with mocked provider data
 
 ## v1.1+ Requirements
 
@@ -47,8 +47,8 @@
 | NATIVE-04 | Phase 2 | Complete |
 | API-01 | Phase 2 | Complete |
 | API-02 | Phase 2 | Complete |
-| DOC-01 | Phase 3 | Pending |
-| DOC-02 | Phase 3 | Pending |
+| DOC-01 | Phase 3 | Complete |
+| DOC-02 | Phase 3 | Complete |
 
 **Coverage:**
 - v1.0.5 requirements: 8 total
@@ -57,4 +57,4 @@
 
 ---
 *Requirements defined: 2026-03-13*
-*Last updated: 2026-03-13 after Phase 2 verification*
+*Last updated: 2026-03-13 after Phase 3 verification*

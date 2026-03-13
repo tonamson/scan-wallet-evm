@@ -3,7 +3,7 @@
 ## Milestones
 
 - ✅ **Legacy baseline** - `v1.0.4` and earlier (shipped 2026-03-12, pre-GSD planning)
-- 🚧 **v1.0.5 Native Token Scanning** - Phases 1-3 (planned)
+- ✅ **v1.0.5 Native Token Scanning** - Phases 1-3 (complete)
 
 ## Overview
 
@@ -18,7 +18,7 @@ This milestone adds native-token transfer scanning to an existing ERC20-focused 
 
 - [x] **Phase 1: Native Scan Core** - Implement native transfer discovery, direction filtering, and default range handling
 - [x] **Phase 2: Public API & Typings** - Expose a stable native-transfer API with provider-option parity and declarations
-- [ ] **Phase 3: Docs & Verification** - Document the feature and close the native-transfer test matrix
+- [x] **Phase 3: Docs & Verification** - Document the feature and close the native-transfer test matrix
 
 ## Phase Details
 
@@ -61,8 +61,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Update README examples and API notes for native-token scanning
-- [ ] 03-02-PLAN.md — Finalize the native-transfer test matrix and release-readiness checks
+- [x] 03-01-PLAN.md — Update README examples and API notes for native-token scanning
+- [x] 03-02-PLAN.md — Finalize the native-transfer test matrix and release-readiness checks
 
 ## Progress
 
@@ -70,4 +70,4 @@ Plans:
 |-------|-----------|----------------|--------|-----------|
 | 1. Native Scan Core | v1.0.5 | 2/2 | Complete | 2026-03-13 |
 | 2. Public API & Typings | v1.0.5 | 2/2 | Complete | 2026-03-13 |
-| 3. Docs & Verification | v1.0.5 | 0/2 | Not started | - |
+| 3. Docs & Verification | v1.0.5 | 2/2 | Complete | 2026-03-13 |

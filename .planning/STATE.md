@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0.5
 milestone_name: native token scanning
-status: ready_to_plan
-last_updated: "2026-03-13T05:06:16.000Z"
+status: ready_to_complete
+last_updated: "2026-03-13T05:44:28.000Z"
 progress:
   total_phases: 3
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 6
-  completed_plans: 4
+  completed_plans: 6
 ---
 
 # Project State
@@ -18,23 +18,23 @@ progress:
 See: `.planning/PROJECT.md` (updated 2026-03-13)
 
 **Core value:** Developers can reliably query EVM wallet transfer history through a small, typed API that works against ordinary RPC infrastructure.
-**Current focus:** Phase 3 - Docs & Verification
+**Current focus:** Milestone completion
 
 ## Current Position
 
-Phase: 3 of 3 (Docs & Verification)
-Plan: 0 of 2 in current phase
-Status: Ready to plan
-Last activity: 2026-03-13 — Phase 2 executed and verified
+Phase: Complete (all 3 phases executed)
+Plan: 2 of 2 completed in final phase
+Status: Ready to complete milestone
+Last activity: 2026-03-13 — Phase 3 executed and verified
 
-Progress: [███████░░░] 67%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
+- Total plans completed: 6
 - Average duration: 9 min
-- Total execution time: 0.6 hours
+- Total execution time: 0.8 hours
 
 **By Phase:**
 
@@ -42,9 +42,10 @@ Progress: [███████░░░] 67%
 |-------|-------|-------|----------|
 | 1 | 2 | 18 min | 9 min |
 | 2 | 2 | 17 min | 8.5 min |
+| 3 | 2 | 15 min | 7.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 8 min, 10 min, 9 min, 8 min
+- Last 5 plans: 10 min, 9 min, 8 min, 8 min, 7 min
 - Trend: Stable
 
 ## Accumulated Context
@@ -64,17 +65,19 @@ Recent decisions affecting current work:
 - `Phase 2`: Package root will export dedicated native scan types and selected native helpers without altering ERC20 API compatibility
 - `Phase 2`: Public runtime exports now include `scanNativeTransfers` and `NATIVE_TRANSFER_DIRECTIONS` at the package root
 - `Phase 2`: TypeScript surface now includes `NativeTransfer`, `ScanNativeTransfersOptions`, and native provider helper interfaces
+- `Phase 3`: README now documents both ERC20 and native scanning, including top-level-only scope for native transfers
+- `Phase 3`: Release verification stays offline with mocked providers and explicit native test scenarios
 
 ### Pending Todos
 
-None yet.
+None
 
 ### Blockers/Concerns
 
-- Phase 3 must document the native feature clearly without implying support for internal trace transfers
+None
 
 ## Session Continuity
 
-Last session: 2026-03-13 12:06
-Stopped at: Phase 2 executed and verified
-Resume file: `.planning/phases/02-public-api-typings/02-VERIFICATION.md`
+Last session: 2026-03-13 12:44
+Stopped at: Phase 3 executed and verified
+Resume file: `.planning/phases/03-docs-verification/03-VERIFICATION.md`
