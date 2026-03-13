@@ -1,6 +1,6 @@
 <div align="center">
 
-# scan-erc20-token
+# Scan Wallet EVM
 
 Scan wallet-level EVM transfer activity with a minimal, typed API.
 
