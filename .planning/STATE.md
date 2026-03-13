@@ -12,7 +12,7 @@ See: `.planning/PROJECT.md` (updated 2026-03-13)
 Phase: 1 of 3 (Native Scan Core)
 Plan: 0 of 2 in current phase
 Status: Ready to plan
-Last activity: 2026-03-13 — Milestone `v1.0.5` roadmap created
+Last activity: 2026-03-13 — Phase 1 context gathered
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -43,6 +43,8 @@ Recent decisions affecting current work:
 - `v1.0.5`: Research was skipped because native-token support is adjacent to the existing ERC20 scanning domain
 - `v1.0.5`: Native-token support will be added as a dedicated API, not by overloading the ERC20 API
 - `v1.0.5`: Scope is limited to top-level native transfers available through standard RPC methods
+- `Phase 1`: Native scan treats positive-value contract calls as valid native transfers
+- `Phase 1`: Self-transfers appear in both `in` and `out`, and `both` mode returns both records
 
 ### Pending Todos
 
@@ -55,5 +57,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-13 10:00
-Stopped at: Milestone `v1.0.5` initialized; Phase 1 is ready for discussion or planning
-Resume file: None
+Stopped at: Phase 1 context gathered
+Resume file: `.planning/phases/01-native-scan-core/01-CONTEXT.md`
