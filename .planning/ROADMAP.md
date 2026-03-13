@@ -17,7 +17,7 @@ This milestone adds native-token transfer scanning to an existing ERC20-focused 
 - Because this is the first GSD-managed milestone for a brownfield repository, phase numbering starts at `1`
 
 - [x] **Phase 1: Native Scan Core** - Implement native transfer discovery, direction filtering, and default range handling
-- [ ] **Phase 2: Public API & Typings** - Expose a stable native-transfer API with provider-option parity and declarations
+- [x] **Phase 2: Public API & Typings** - Expose a stable native-transfer API with provider-option parity and declarations
 - [ ] **Phase 3: Docs & Verification** - Document the feature and close the native-transfer test matrix
 
 ## Phase Details
@@ -47,8 +47,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Expose native runtime API at the package root
-- [ ] 02-02-PLAN.md — Add public native typings and typecheck coverage
+- [x] 02-01-PLAN.md — Expose native runtime API at the package root
+- [x] 02-02-PLAN.md — Add public native typings and typecheck coverage
 
 ### Phase 3: Docs & Verification
 **Goal**: Make the new native-transfer capability understandable, testable, and ready for release.
@@ -69,5 +69,5 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 1. Native Scan Core | v1.0.5 | 2/2 | Complete | 2026-03-13 |
-| 2. Public API & Typings | v1.0.5 | 0/2 | Not started | - |
+| 2. Public API & Typings | v1.0.5 | 2/2 | Complete | 2026-03-13 |
 | 3. Docs & Verification | v1.0.5 | 0/2 | Not started | - |

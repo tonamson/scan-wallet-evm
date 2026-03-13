@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0.5
 milestone_name: native token scanning
 status: ready_to_plan
-last_updated: "2026-03-13T04:25:00.000Z"
+last_updated: "2026-03-13T05:06:16.000Z"
 progress:
   total_phases: 3
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 6
-  completed_plans: 2
+  completed_plans: 4
 ---
 
 # Project State
@@ -18,32 +18,33 @@ progress:
 See: `.planning/PROJECT.md` (updated 2026-03-13)
 
 **Core value:** Developers can reliably query EVM wallet transfer history through a small, typed API that works against ordinary RPC infrastructure.
-**Current focus:** Phase 2 - Public API & Typings
+**Current focus:** Phase 3 - Docs & Verification
 
 ## Current Position
 
-Phase: 2 of 3 (Public API & Typings)
+Phase: 3 of 3 (Docs & Verification)
 Plan: 0 of 2 in current phase
 Status: Ready to plan
-Last activity: 2026-03-13 — Phase 2 context gathered
+Last activity: 2026-03-13 — Phase 2 executed and verified
 
-Progress: [███░░░░░░░] 33%
+Progress: [███████░░░] 67%
 
 ## Performance Metrics
 
 **Velocity:**
 - Total plans completed: 2
 - Average duration: 9 min
-- Total execution time: 0.3 hours
+- Total execution time: 0.6 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1 | 2 | 18 min | 9 min |
+| 2 | 2 | 17 min | 8.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 8 min, 10 min
+- Last 5 plans: 8 min, 10 min, 9 min, 8 min
 - Trend: Stable
 
 ## Accumulated Context
@@ -61,6 +62,8 @@ Recent decisions affecting current work:
 - `Phase 1`: Native scan implementation remains internal until Phase 2 exposes a public API and typings
 - `Phase 2`: Public native API will be `scanNativeTransfers` with an options shape kept close to ERC20
 - `Phase 2`: Package root will export dedicated native scan types and selected native helpers without altering ERC20 API compatibility
+- `Phase 2`: Public runtime exports now include `scanNativeTransfers` and `NATIVE_TRANSFER_DIRECTIONS` at the package root
+- `Phase 2`: TypeScript surface now includes `NativeTransfer`, `ScanNativeTransfersOptions`, and native provider helper interfaces
 
 ### Pending Todos
 
@@ -68,10 +71,10 @@ None yet.
 
 ### Blockers/Concerns
 
-- Phase 2 must expose the native scan through a public API without breaking existing ERC20 consumers
+- Phase 3 must document the native feature clearly without implying support for internal trace transfers
 
 ## Session Continuity
 
-Last session: 2026-03-13 11:25
-Stopped at: Phase 2 context gathered
-Resume file: `.planning/phases/02-public-api-typings/02-CONTEXT.md`
+Last session: 2026-03-13 12:06
+Stopped at: Phase 2 executed and verified
+Resume file: `.planning/phases/02-public-api-typings/02-VERIFICATION.md`
