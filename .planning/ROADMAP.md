@@ -47,8 +47,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: Wire provider-option parity and finalize the exported native-scan API shape
-- [ ] 02-02: Update declaration files and consumer-style typecheck coverage
+- [ ] 02-01-PLAN.md — Expose native runtime API at the package root
+- [ ] 02-02-PLAN.md — Add public native typings and typecheck coverage
 
 ### Phase 3: Docs & Verification
 **Goal**: Make the new native-transfer capability understandable, testable, and ready for release.
