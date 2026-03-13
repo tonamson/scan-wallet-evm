@@ -1,3 +1,4 @@
 node_modules
 yarn.lock
 .planning
+test-scan.js
