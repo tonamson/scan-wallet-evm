@@ -9,7 +9,7 @@ import {
   type NativeTransfer,
   type NativeTransferDirection,
   type ScanNativeTransfersOptions,
-} from "scan-erc20-token";
+} from "scan-wallet-evm";
 
 const provider = createRpcProvider({
   rpcUrl: "https://bsc-mainnet.gateway.tatum.io/",

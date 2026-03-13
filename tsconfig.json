@@ -5,7 +5,7 @@
     "moduleResolution": "NodeNext",
     "baseUrl": ".",
     "paths": {
-      "scan-erc20-token": [
+      "scan-wallet-evm": [
         "./src/index.d.ts"
       ]
     },

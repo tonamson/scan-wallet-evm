@@ -1,14 +1,14 @@
 {
   "author": "To Nam Son",
-  "name": "scan-erc20-token",
+  "name": "scan-wallet-evm",
   "version": "1.0.5",
-  "description": "Scan ERC20 Transfer logs for a wallet with optional RPC proxy and block range filters.",
+  "description": "Wallet scanner for native token and ERC20 transfers on EVM networks.",
   "type": "module",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tonamson/scan-erc20-token.git"
+    "url": "https://github.com/tonamson/scan-wallet-evm.git"
   },
   "exports": {
     ".": {

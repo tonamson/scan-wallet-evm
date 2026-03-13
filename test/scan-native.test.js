@@ -7,7 +7,7 @@ import {
   NATIVE_TRANSFER_DIRECTIONS,
   scanErc20Transfers,
   scanNativeTransfers,
-} from "scan-erc20-token";
+} from "scan-wallet-evm";
 
 function createNativeProvider({ blocks, latestBlock, receipts }) {
   const calls = {

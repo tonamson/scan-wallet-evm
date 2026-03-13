@@ -3,7 +3,7 @@ import test from "node:test";
 
 import { ethers } from "ethers";
 
-import { scanErc20Transfers } from "scan-erc20-token";
+import { scanErc20Transfers } from "scan-wallet-evm";
 
 function addressToTopic(address) {
   return "0x000000000000000000000000" + address.slice(2).toLowerCase();
