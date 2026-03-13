@@ -1,5 +1,9 @@
 import { ethers, FetchRequest } from "ethers";
 import { HttpsProxyAgent } from "https-proxy-agent";
+import {
+  NATIVE_TRANSFER_DIRECTIONS,
+  scanNativeTransfersWithProvider,
+} from "./native.js";
 
 /**
  * Topic hash of the ERC20 `Transfer(address,address,uint256)` event.
@@ -128,6 +132,48 @@ export function createRpcProvider(options) {
   return new ethers.JsonRpcProvider(request);
 }
 
+/**
+ * Scans top-level native transfers for a wallet.
+ *
+ * By default it scans both incoming and outgoing transfers. Use `direction`
+ * to limit the query to only received (`in`) or sent (`out`) transfers.
+ *
+ * @param {object} options Scan options.
+ * @param {string} options.rpcUrl EVM JSON-RPC endpoint URL.
+ * @param {string} options.wallet Wallet address to scan.
+ * @param {"in" | "out" | "both"} [options.direction] Scan incoming, outgoing, or both.
+ * @param {number | bigint} [options.fromBlock] Optional start block.
+ * If both `fromBlock` and `toBlock` are omitted, the scan starts at `latestBlock - 100`.
+ * @param {number | bigint} [options.toBlock] Optional end block.
+ * If both `fromBlock` and `toBlock` are omitted, the scan ends at `latestBlock`.
+ * @param {string | {url: string, username?: string, password?: string} | null} [options.proxy]
+ * Optional proxy configuration or proxy URL string.
+ * @param {string | {url: string, username?: string, password?: string} | null} [options.proxyUrl]
+ * Alias of `options.proxy`.
+ * @param {number} [options.timeoutMs] Optional HTTP timeout in milliseconds.
+ * @param {{
+ *   getBlockNumber(): Promise<number>,
+ *   getBlock(blockNumber: number, includeTransactions: boolean): Promise<{
+ *     timestamp: number,
+ *     transactions: Array<{
+ *       from: string,
+ *       to: string,
+ *       value: bigint | string,
+ *       hash: string,
+ *       index: number
+ *     }>
+ *   } | null>,
+ *   getTransactionReceipt(transactionHash: string): Promise<{ status: number | bigint } | null>
+ * }} [options.provider] Optional custom provider implementation.
+ */
+export async function scanNativeTransfers(options) {
+  const provider = options.provider ?? createRpcProvider(options);
+  return scanNativeTransfersWithProvider({
+    ...options,
+    provider,
+  });
+}
+
 function mapTransferLog(log, blockTimestamp) {
   return {
     token: ethers.getAddress(log.address),
@@ -251,3 +297,5 @@ export async function scanErc20Transfers(options) {
 
   return logs.map((log) => mapTransferLog(log, blockTimestamps.get(log.blockNumber)));
 }
+
+export { NATIVE_TRANSFER_DIRECTIONS };

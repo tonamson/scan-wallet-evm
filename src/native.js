@@ -1,6 +1,9 @@
 import { ethers } from "ethers";
 
-const NATIVE_TRANSFER_DIRECTIONS = ["in", "out", "both"];
+/**
+ * Supported scan directions for native transfer queries.
+ */
+export const NATIVE_TRANSFER_DIRECTIONS = ["in", "out", "both"];
 
 /**
  * @typedef {{
