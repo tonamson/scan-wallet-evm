@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.6] - 2026-03-13
+
+### Changed
+
+- Renamed the project/package from `scan-erc20-token` to `scan-wallet-evm` so the name matches the current scope: scanning EVM wallets for both native token transfers and ERC20 token activity.
+
 ## [1.0.5] - 2026-03-13
 
 ### Added
